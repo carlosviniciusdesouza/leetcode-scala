@@ -1,5 +1,10 @@
 package solutions
 
+/**
+@Author Carlos Souza
+@Problem https://leetcode.com/problems/two-sum/
+**/
+
 object TwoSum {
   def twoSum(nums: Array[Int], target: Int): Array[Int] = {
     var a :  Option[Array[Int]] = Option.empty
