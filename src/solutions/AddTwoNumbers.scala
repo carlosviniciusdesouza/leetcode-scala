@@ -3,7 +3,7 @@ package solutions
 /**
  * @Author Carlos Souza
  * @Problem https://leetcode.com/problems/add-two-numbers/
- * WIP
+ *          WIP
  **/
 
 object AddTwoNumbers {
@@ -11,6 +11,28 @@ object AddTwoNumbers {
   class ListNode(_x: Int = 0, _next: ListNode = null) {
     var next: ListNode = _next
     var x: Int = _x
+  }
+
+  def addTwoNumbers2(l1: ListNode, l2: ListNode): ListNode = {
+    def toStr(l1 : ListNode) : String = {
+      var node = l1
+      var value = ""
+      while (node != null) {
+        value = node.x.toString + value
+        node = node.next
+      }
+      value
+    }
+    var node1 = toStr(l1)
+    var node2 = toStr(l2)
+    var sum = (node1.toInt + node2.toInt).toString.reverse
+    var result = new ListNode(sum.head)
+    sum = sum.tail
+    var temp : ListNode = null
+    while(!sum.isEmpty){
+      temp = new ListNode(sum.head.asDigit)
+    }
+    new ListNode()
   }
 
   def addTwoNumbers(l1: ListNode, l2: ListNode): ListNode = {
@@ -46,30 +68,30 @@ object AddTwoNumbers {
 
     var i1 = new ListNode()
     i1.x = 1
-    /*var i2 = new ListNode()
-    i2.x = 4
+    var i2 = new ListNode()
+    i2.x = 1
     var i3 = new ListNode()
-    i3.x = 3
+    i3.x = 1
 
     i1.next = i2
-    i2.next = i3*/
+    i2.next = i3
 
-   /* Output
-      [1]
-    Expected
-      [1,6]*/
+    /* Output
+       [1]
+     Expected
+       [1,6]*/
 
     var i4 = new ListNode()
-    i4.x = 0
+    i4.x = 2
     var i5 = new ListNode()
-    i5.x = 6
-    /*var i6 = new ListNode()
-    i6.x = 4*/
+    i5.x = 2
+    var i6 = new ListNode()
+    i6.x = 2
 
     i4.next = i5
-    /*i5.next = i6*/
+    i5.next = i6
 
-    var result = addTwoNumbers(i1, i4)
+    var result = addTwoNumbers2(i1, i4)
     println(result.x)
     while (result.next != null) {
       result = result.next
