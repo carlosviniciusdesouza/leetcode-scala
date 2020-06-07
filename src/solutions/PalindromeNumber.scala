@@ -8,6 +8,9 @@ package solutions
 
 object PalindromeNumber {
 
+  /**
+   * This function is WIP, it does not work with input 1000110001
+   */
   def isPalindrome_recursive(x: Int): Boolean = {
     def countDigits(x: Int) = (Math.log10(x) + 1).toInt
 
